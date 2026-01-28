@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Ôn tập Tiếng Anh</title>
+<style>
+body{font-family:Arial;line-height:1.6;padding:20px}
+select,button{padding:8px;margin:10px 0}
+.answers{display:none;background:#f2f2f2;padding:10px;margin-top:10px}
+h2{color:#2c3e50}
+</style>
+</head>
+<body>
+
+<h2>CHỌN MỨC ĐỘ</h2>
+<select id="level" onchange="changeLevel()">
+<option value="nb">I. NHẬN BIẾT</option>
+<option value="th">II. THÔNG HIỂU</option>
+<option value="vd">III. VẬN DỤNG</option>
+</select>
+
+<div id="content"></div>
+<button onclick="toggleAnswers()">Nộp bài / Hiện đáp án</button>
+
+<script>
+const data={
+nb:`
+<h2>I. NHẬN BIẾT</h2>
+<b>Task 1: Rewrite the sentences</b>
+<ol>
+<li>“Why don’t you put better lock on the door, Barbara”? said John</li>
+<li>Although his both legs were broken in the crash, he managed to get out of the car before it exploded.</li>
+<li>I haven’t eaten this kind of food before.</li>
+<li>The architect has drawn plans for an extension to the house.</li>
+<li>It isn’t necessary for you to finish by Saturday.</li>
+<li>“How many survivors are there?”, asked the journalist.</li>
+<li>It was such rotten meat that it had to be thrown away.</li>
+<li>It is essential that Professor Van Helsing is met at the airport.</li>
+</ol>
+
+<div class="answers">
+<b>ĐÁP ÁN</b>
+<ol>
+<li>John suggested that Barbara should put a better lock on the door.</li>
+<li>Despite his both broken legs, he managed to get out of the car before it exploded.</li>
+<li>This is the <b>first</b> time I have eaten this kind of food.</li>
+<li>Plans for an extension to the house have been drawn by the architect.</li>
+<li>You don’t have to finish by Saturday.</li>
+<li>The journalist wanted to know how many survivors there were.</li>
+<li>The meat was so rotten that it had to be thrown away.</li>
+<li>Professor Van Helsing must be met at the airport.</li>
+</ol>
+</div>
+`,
+
+th:`
+<h2>II. THÔNG HIỂU</h2>
+
+<b>Task 1: Rewrite the sentences</b>
+<ol>
+<li>Can you understand what this paper means? (sense)</li>
+<li>It wasn’t necessary to meet me at the airport yesterday. (needn’t)</li>
+<li>It was unkind of you to talk to her like that. (not)</li>
+<li>I saw the film although I strongly dislike thrillers. (spite)</li>
+<li>It’s not possible to play tennis because of the rain. (makes)</li>
+<li>I’ve never tasted such good food before. (ever)</li>
+<li>Do your parents allow you to watch TV late at night? (let)</li>
+<li>“Did you write a note for Anna?” I asked my mother. (she)</li>
+</ol>
+
+<div class="answers">
+<b>ĐÁP ÁN</b>
+<ol>
+<li>Can you make sense of this paper?</li>
+<li>You needn’t have met me at the airport yesterday.</li>
+<li>You should not have talked to her like that.</li>
+<li>I saw the film in spite of my strong dislike of thrillers.</li>
+<li>The rain makes it impossible to play tennis.</li>
+<li>It is the best food I’ve ever tasted.</li>
+<li>Do your parents let you watch TV late at night?</li>
+<li>I asked my mother whether/if she had written a note for Anna.</li>
+</ol>
+</div>
+
+<b>Task 2: Sentence transformation</b>
+<ol>
+<li>He had never played in such a wonderful theatre before.</li>
+<li>I’ll be very happy when I go on holiday.</li>
+<li>The village is the same as it was in the 1950s.</li>
+<li>You are not allowed to drive if you don’t have a driving license.</li>
+<li>This is the first time he has travelled abroad.</li>
+<li>We were very happy when we heard the good news.</li>
+</ol>
+
+<div class="answers">
+<ol>
+<li>It was the first time he had played in such a wonderful theatre.</li>
+<li>I am very much looking forward to going on holiday.</li>
+<li>The village has not changed since the 1950s.</li>
+<li>You must not drive if you don’t have a driving license.</li>
+<li>He has never travelled abroad before.</li>
+<li>Hearing the good news made us very happy.</li>
+</ol>
+</div>
+
+<b>Task 3: Passive voice</b>
+<ol>
+<li>They can’t make tea with cold water.</li>
+<li>The chief engineer was instructing all the workers.</li>
+<li>Somebody has taken some of my books away.</li>
+<li>They will hold the meeting before May Day.</li>
+</ol>
+
+<div class="answers">
+<ol>
+<li>Tea can’t be made with cold water.</li>
+<li>All the workers were being instructed by the chief engineer.</li>
+<li>Some of my books have been taken away.</li>
+<li>The meeting will be held before May Day.</li>
+</ol>
+</div>
+`,
+
+vd:`<h2>III. VẬN DỤNG</h2><p>(Bạn có thể dán phần Vận dụng vào đây – JS đã sẵn sàng)</p>`
+};
+
+function changeLevel(){
+document.getElementById("content").innerHTML=data[document.getElementById("level").value];
+}
+function toggleAnswers(){
+document.querySelectorAll(".answers").forEach(a=>{
+a.style.display=a.style.display==="block"?"none":"block";
+});
+}
+changeLevel();
+</script>
+
+</body>
+</html>
